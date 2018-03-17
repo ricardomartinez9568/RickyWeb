@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Login Form</h1>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" [(ngModel)]="credentials.email" class="form-control"  name="email" #email="ngModel" required>
+    </div>
+    <div class="form-group">
+      <label for="alterEgo">Password</label>
+      <input type="password" [(ngModel)]="credentials.password" class="form-control" name="password" #password="ngModel" required>
+    </div>
+
+    <button [disabled]="!loginForm.valid"  type="submit" class="btn btn-success">Login</button>
+
+  </form>
+</div>
