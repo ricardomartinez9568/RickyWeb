@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {NgForm, NgModel} from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 class NewForm {
   FirstName: string;
@@ -36,9 +36,11 @@ export class ContactComponent implements OnInit {
     .subscribe(
       result => {
         console.log(result);
+        this.newForm = new NewForm();
       },
       err => {
         console.log(err);
+        this.newForm = new NewForm();
       });
   }
 }
