@@ -1,7 +1,10 @@
 .nav {
-    background-color: black
+    background-color: black;
 }
-body{
-    background: url('https://www.lacity.org/sites/g/files/wph781/f/styles/tiled_homepage_blog/public/bigstock-griffith-164078174.jpg?itok=By-CwsP2') ;
-    background-size: cover;
+
+.nav-link {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    font-size: 16px;
 }

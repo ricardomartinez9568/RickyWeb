@@ -1,3 +1,31 @@
 formgroup{
     padding-top: 100px;
 }
+
+p {
+    word-break: break-all;
+}
+
+.container {
+border-bottom: 3px solid black;
+padding: 10px;
+border-radius: 25px;
+background-color: white
+}
+
+#text {
+    border-bottom: 1px solid black;
+}    
+
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 100px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #F2F2F2;
+}
