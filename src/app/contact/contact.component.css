@@ -8,6 +8,18 @@ img{
 .fb{
     flex: 1;
 }
-.twiiter{
+.twiiter {
     flex:1;
+}
+.container {
+    background-color: white;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 2px solid black;
+}
+button{
+    border-radius: 25px;
+    background-color: #EAF7CF;
+    font-size: 16px;
 }

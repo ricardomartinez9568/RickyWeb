@@ -4,28 +4,49 @@ formgroup{
 
 p {
     word-break: break-all;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 15px;
 }
 
-.container {
-border-bottom: 3px solid black;
+#wholepic {
 padding: 10px;
 border-radius: 25px;
-background-color: white
+background-color: white;
+border: 2px solid black;
+
 }
 
 #text {
     border-bottom: 1px solid black;
 }    
 
-.pb-cmnt-container {
-    font-family: Lato;
-    margin-top: 100px;
+
+.card mb-4{
+    padding-bottom: 75px;
+   
+}
+.col-md-8{
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-title{
+    padding-left: 10px;
+    text-decoration: underline;
+}
+button{
+    margin-left: 520px;
+    border-radius: 25px;
+    background-color: #EAF7CF;
+    font-size: 16px;
+}
+#button{
+    padding-bottom: 15px;
+}
+.card my-4{
+    padding-bottom: 15px;
+}
+.form-group{
+    padding-bottom: 10px;
 }
 
-.pb-cmnt-textarea {
-    resize: none;
-    padding: 20px;
-    height: 130px;
-    width: 100%;
-    border: 1px solid #F2F2F2;
-}

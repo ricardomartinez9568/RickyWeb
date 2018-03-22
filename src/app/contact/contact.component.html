@@ -1,79 +1,85 @@
 <div class="span6">
     <ul class="nav justify-content-center">
-    <h2 style="padding-top:75px;">Contact Me</h2>
+        <h2 style="padding-top:75px;">Contact Me</h2>
     </ul>
 </div>
 
-<form id="contact-form" method="post" action="contact.php" role="form">
+<div class="container">
+    <form id="contact-form" method="post" action="contact.php" role="form">
 
-    <div class="messages">
+        <div class="messages">
 
-    <div class="controls">
+            <div class="controls">
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_name">Firstname *</label>
-                    <input id="form_name" type="text" [(ngModel)]="newForm.FirstName" name="FirstName" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                    <div class="help-block with-errors"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">Firstname *</label>
+                            <input id="form_name" type="text" [(ngModel)]="newForm.FirstName" name="FirstName" class="form-control" placeholder="Please enter your firstname *"
+                                required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_lastname">Lastname *</label>
+                            <input id="form_lastname" type="text" [(ngModel)]="newForm.LastName" name="LastName" class="form-control" placeholder="Please enter your lastname *"
+                                required="required" data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_lastname">Lastname *</label>
-                    <input id="form_lastname" type="text" [(ngModel)]="newForm.LastName"  name="LastName" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                    <div class="help-block with-errors"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" [(ngModel)]="newForm.email" name="email" class="form-control" placeholder="Please enter your email *"
+                                required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_phone">Phone</label>
+                            <input id="form_phone" type="tel" [(ngModel)]="newForm.phone" name="phone" class="form-control" placeholder="Please enter your phone">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">Message *</label>
+                            <textarea id="form_message" name="message" [(ngModel)]="newForm.message" class="form-control" placeholder="Message for me *"
+                                rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="nav justify-content-center">
+                            <!-- <input (click)="sendMessage()" type="submit" class="btn btn-success btn-send" value="Send message"> -->
+                            <button (click)="onSubmit()">Click me</button>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_email">Email *</label>
-                    <input id="form_email" type="email" [(ngModel)]="newForm.email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_phone">Phone</label>
-                    <input id="form_phone" type="tel" [(ngModel)]="newForm.phone" name="phone" class="form-control" placeholder="Please enter your phone">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="form_message">Message *</label>
-                    <textarea id="form_message" name="message" [(ngModel)]="newForm.message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-12">
-              <ul class="nav justify-content-center">
-              <!-- <input (click)="sendMessage()" type="submit" class="btn btn-success btn-send" value="Send message"> -->
-                <button (click)="onSubmit()">Click me</button>
-              </ul>
-            </div>
-        </div>
-    </div>
+    </form>
+</div>
+
 
 
 <div class="span6">
     <ul class="nav justify-content-center">
-    <h2 style="padding-top:75px;">Social Media</h2>
+        <h2 style="padding-top:75px;">Social Media</h2>
     </ul>
 </div>
 
-<div class = "contactLogos" >
-    <div class = "fb" >
-            <img class = "fb"  src="../../assets/img/Facebook.png" class="rounded mx-auto d-block" >
+<div class="contactLogos">
+    <div class="fb">
+        <img class="fb" src="../../assets/img/Facebook.png" class="rounded mx-auto d-block">
     </div>
-    <div class = "twitter" >
-            <img class = "twitter" src="../../assets/img/TwitterLogo.png" class="rounded mx-auto d-block" >
+    <div class="twitter">
+        <img class="twitter" src="../../assets/img/TwitterLogo.png" class="rounded mx-auto d-block">
     </div>
 </div>
-
-
-
