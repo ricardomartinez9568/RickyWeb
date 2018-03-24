@@ -1,5 +1,7 @@
 .nav {
     background-color: white;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .nav-link {
@@ -9,6 +11,11 @@
     font-size: 16px;
     color: black;
 }
-.nav-link:hover {
-    background-color: #EAF7CF
+a:hover {
+    color: black;
+    background-color: #E0E0E0
+}
+img {
+    margin-right: 6px;
+    margin-top: -4px;
 }
