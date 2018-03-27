@@ -6,6 +6,8 @@ import { baseUrl } from '../_services/httpBaseUrl/httpBaseUrl';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
+
+
 class NewBlog {
   Author: String;
   Content: String;
@@ -18,6 +20,36 @@ interface NewBlogInterface {
   ID: Number;
   timeStamp: Date;
 }
+class Comment {
+  discussionId: String;
+  name: String;
+  content: String;
+  replies: [
+    {
+      name: String;
+      content: String;
+    }
+  ];
+  createdDate: Date;
+}
+
+interface CommentInterface {
+  discussionId: String;
+  name: String;
+  content: String;
+  replies: [
+    {
+      name: String;
+      content: String;
+    }
+  ];
+  createdDate: Date;
+}
+
+interface ServerResponse {
+  type: boolean;
+  data: any;
+}
 
 
 @Component({
@@ -28,7 +60,10 @@ interface NewBlogInterface {
 export class BlogComponent implements OnInit {
   public blog: NewBlog;
   public headerID;
-  public httpHead;
+  public comment: Comment;
+  public cycleComments;
+
+
 
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
@@ -46,6 +81,20 @@ export class BlogComponent implements OnInit {
         this.blog = data;
         console.log(this.blog);
       });
-
-    }
+    this.http.get(baseUrl + '/postComments')
+      .subscribe((data: CommentInterface) => {
+        this.comment = data;
+        this.cycleComments = this.comment;
+        console.log(this.comment);
+      });
+    this.comment = new Comment;
   }
+
+onSubmit() {
+  this.comment.discussionId = this.headerID;
+  console.log(this.comment);
+  this.commentService.comment(this.comment)
+    .subscribe((res: ServerResponse) => {
+      console.log(res);
+    });
+}}

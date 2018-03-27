@@ -1,4 +1,4 @@
-img {
+#Me {
     width: 300px;
     height: 300px;
     border-radius: 50%
@@ -9,3 +9,6 @@ img {
     padding: 75px 75px 75px 75px;
 }
 
+ #VS {
+     padding-left: 450px;
+ }
