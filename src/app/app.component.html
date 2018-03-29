@@ -6,8 +6,15 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="about"><img src="../../assets/WebsiteIcons/png/user.png" width="17" height="17">About Me</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="blog/5ab6912e3d56ed03abc58b30"><img src="../../assets/WebsiteIcons/png/edit-document-button.png" width="17" height="17">Blog</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/WebsiteIcons/png/user.png" width="17" height="17">
+         Blog
+      </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" routerLink="blog/5ab6912e3d56ed03abc58b30">Blog #1</a>
+        <a class="dropdown-item" routerLink="blog/5ab6915c3d56ed03abc58b31">Blog #2</a>
+        <a class="dropdown-item" routerLink="blog/5ab6917a3d56ed03abc58b32">Blog #3</a>
+      </div>
     </li>
     <li class="nav-item">
         <a class="nav-link" routerLink="contact"><img src="../../assets/WebsiteIcons/png/mail-envelope-shape.png" width="17" height="17">Contact</a>
@@ -17,3 +24,6 @@
 
 <router-outlet></router-outlet>
 </body>
+
+<!-- <img src="../../assets/WebsiteIcons/png/edit-document-button.png" width="17" height="17" -->
+<!-- routerLink="blog/5ab6912e3d56ed03abc58b30" -->

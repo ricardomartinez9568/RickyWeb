@@ -39,8 +39,10 @@ margin-bottom: 20px;
 button{
     margin-left: 520px;
     border-radius: 25px;
-    background-color: #EAF7CF;
+    background-color: white;
     font-size: 16px;
+    border: 1px solid black;
+
 }
 #button{
     padding-bottom: 15px;

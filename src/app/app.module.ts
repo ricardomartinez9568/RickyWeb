@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './_services/auth/auth.service';
+import { CommentService } from './_services/comment/comment.service';
 
 
 
@@ -29,7 +30,9 @@ import { AuthService } from './_services/auth/auth.service';
     HttpClientModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    CommentService
+
   ],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { BlogService } from '../_services/Blog/blog.service';
 import { baseUrl } from '../_services/httpBaseUrl/httpBaseUrl';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { CommentService } from '../_services/comment/comment.service';
+import { error } from 'util';
 
 
 
@@ -23,11 +24,11 @@ interface NewBlogInterface {
 class Comment {
   discussionId: String;
   name: String;
-  content: String;
+  text: String;
   replies: [
     {
       name: String;
-      content: String;
+      text: String;
     }
   ];
   createdDate: Date;
@@ -36,11 +37,11 @@ class Comment {
 interface CommentInterface {
   discussionId: String;
   name: String;
-  content: String;
+  text: String;
   replies: [
     {
       name: String;
-      content: String;
+      text: String;
     }
   ];
   createdDate: Date;
@@ -58,22 +59,32 @@ interface ServerResponse {
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
+  public comment: Comment;
+  public newComment: Comment;
   public blog: NewBlog;
   public headerID;
-  public comment: Comment;
   public cycleComments;
 
 
 
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private commentService: CommentService) {
     this.route.params.subscribe((params) => {
       this.headerID = params.id;
+      this.pullData();
     });
   }
 
   ngOnInit() {
+
+  }
+
+  pullData() {
+
+    const headers = new HttpHeaders().set('ID', this.headerID);
+
     this.blog = new NewBlog;
+    // HTTP Get Blogs
     this.http.get(baseUrl + '/blog', {
       headers: new HttpHeaders().set('headerID', this.headerID)
     })
@@ -81,20 +92,26 @@ export class BlogComponent implements OnInit {
         this.blog = data;
         console.log(this.blog);
       });
-    this.http.get(baseUrl + '/postComments')
+    // HTTP Get Comments
+    this.http.get(baseUrl + '/comment', { headers })
       .subscribe((data: CommentInterface) => {
         this.comment = data;
         this.cycleComments = this.comment;
         console.log(this.comment);
       });
     this.comment = new Comment;
+    this.newComment = new Comment;
   }
 
-onSubmit() {
-  this.comment.discussionId = this.headerID;
-  console.log(this.comment);
-  this.commentService.comment(this.comment)
-    .subscribe((res: ServerResponse) => {
-      console.log(res);
-    });
-}}
+ onSubmit() {
+    this.newComment.discussionId = this.headerID;
+    console.log(this.newComment);
+    this.commentService.comment(this.newComment)
+      .subscribe((res: ServerResponse) => {
+        if (error) {
+          throw error;
+        }
+        console.log(res);
+      });
+  }
+}
