@@ -1,0 +1,56 @@
+formgroup{
+    padding-top: 100px;
+}
+
+p {
+    word-break: break-all;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+
+#wholepic {
+padding: 10px;
+border-radius: 25px;
+background-color: white;
+border: 2px solid black;
+margin-bottom: 20px;
+
+}
+
+#text {
+    border-bottom: 1px solid black;
+}    
+
+
+.card mb-4{
+    padding-bottom: 75px;
+   
+}
+.col-md-8{
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-title{
+    padding-left: 20px;
+    text-decoration: underline;
+}
+button{
+    margin-left: 520px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 16px;
+    border: 1px solid black;
+
+}
+#button{
+    padding-bottom: 15px;
+}
+.card my-4{
+    padding-bottom: 15px;
+}
+.form-group{
+    padding-bottom: 10px;
+}
+

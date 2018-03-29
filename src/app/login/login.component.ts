@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../_services/auth/auth.service';
+import { Router } from '@angular/router';
 
 
 const localStorage = window.localStorage;
@@ -25,7 +26,7 @@ interface ServerResponse {
 })
 export class LoginComponent implements OnInit {
   public credentials: Credentials;
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.credentials = new Credentials();
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('authorization', res.token);
           this.credentials.email = '';
           this.credentials.password = '';
+          this.router.navigateByUrl('admin');
         } else if (this.credentials.email !== 'rm3@mscpsharks.org') {
           alert('YEEET');
         } else if (this.credentials.password !== 'password-1') {

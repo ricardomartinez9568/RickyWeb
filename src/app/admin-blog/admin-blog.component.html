@@ -1,0 +1,66 @@
+<ul class="nav justify-content-center">
+  <h2 style="padding-top:75px;">My Blog</h2>
+</ul>
+
+<div class="container" id="wholepic">
+
+  <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+          <h1 class="my-4">Blogs (1/30/18 To 3/31/18)
+          </h1>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+              <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+              <div class="card-body">
+                  <h2 class="card-title">1-30-18</h2>
+                  <p class="card-text">{{blog.Content}}</p>
+              </div>
+              <div class="card-footer text-muted">
+                  Posted on {{blog.created}}
+              </div>
+          </div>
+
+      </div>
+  </div>
+  <!-- Comments Form -->
+  <div class="card my-4">
+      <h5 class="card-header">Leave a Comment:</h5>
+      <div class="card-body">
+          <form #commentForm="ngForm" (ngSubmit)="onSubmit()">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                  </div>
+                  <input class="form-control align-middle" type="text" placeholder="Enter Name" [(ngModel)]="newComment.name" [ngModelOptions]="{standalone: true}"
+                      required>
+              </div>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">Comment</span>
+                  </div>
+                  <textarea class="form-control" placeholder="Enter Comment" [(ngModel)]="newComment.text" [ngModelOptions]="{standalone: true}"
+                      required></textarea>
+              </div>
+              <br>
+              <div>
+                  <button [disabled]="!commentForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Submit</button>
+              </div>
+          </form>
+      </div>
+  </div>
+  <ul>
+      <li *ngFor="let comment of cycleComments">
+        <h5>  {{ comment.name }} </h5>
+           <h6>{{ comment.text }} </h6>
+          <ul>
+              <li *ngFor="let reply of comment.replies">
+                  {{ reply.name }}: {{ reply.text }}
+              </li>
+          </ul>
+      </li>
+  </ul>
+</div>
