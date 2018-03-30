@@ -8,3 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
+// clear() {
+  let clearToken: any;
+  clearToken = localStorage.clear();
+  clearToken = '';
+  console.log(clearToken);
+// }
